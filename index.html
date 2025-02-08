@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Alumni Management System</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add this inline CSS for the header image */
+    .header-image {
+      width: 100%; /* Ensures the image fits within the page width */
+      max-width: 600px; /* Optional: limits the maximum width */
+      height: auto; /* Maintains the aspect ratio */
+      display: block;
+      margin: 0 auto; /* Centers the image horizontally */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Header Image -->
+    <img src="/Alumni%20Management%20System/images/new_image.png" alt="RV College of Engineering" class="header-image">
+
+    <h1>Alumni Management System</h1>
+    
+    <!-- Navigation Tabs -->
+    <div class="tab-container">
+      <button class="tab" onclick="showTab('alumni')">Alumni Registration</button>
+      <button class="tab" onclick="showTab('student')">Student Registration</button>
+    </div>
+    
+    <!-- Alumni Registration Form -->
+    <div id="alumni" class="tab-content">
+      <h2>Alumni Registration</h2>
+      <form id="alumniForm" method="POST" action="process_alumni_registration.php">
+        <label for="alumni-initials">Initials:</label>
+        <select id="alumni-initials" name="initials" required>
+          <option value="">--Select--</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Dr">Dr</option>
+        </select>
+
+        <label for="alumni-name">First Name:</label>
+        <input type="text" id="alumni-name" name="first_name" placeholder="Enter your first name" required>
+
+        <label for="alumni-surname">Surname:</label>
+        <input type="text" id="alumni-surname" name="surname" placeholder="Enter your surname" required>
+
+        <label for="alumni-email">Email ID:</label>
+        <input type="email" id="alumni-email" name="email" placeholder="Enter your email address" required>
+
+        <label for="alumni-username">Create Username:</label>
+        <input type="text" id="alumni-username" name="username" placeholder="Choose a username" required>
+
+        <label for="alumni-password">Create Password:</label>
+        <input type="password" id="alumni-password" name="password" placeholder="Enter your password" required>
+
+        <label for="alumni-graduation">Graduation Year:</label>
+        <input type="number" id="alumni-graduation" name="graduation_year" placeholder="Enter your graduation year" required>
+
+        <button type="submit">Register as Alumni</button>
+      </form>
+    </div>
+
+    <!-- Student Registration Form -->
+    <div id="student" class="tab-content" style="display: none;">
+      <h2>Student Registration</h2>
+      <form id="studentForm" method="POST" action="process_student_registration.php">
+        <label for="student-initials">Initials:</label>
+        <select id="student-initials" name="initials" required>
+          <option value="">--Select--</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Dr">Dr</option>
+        </select>
+
+        <label for="student-name">First Name:</label>
+        <input type="text" id="student-name" name="name" placeholder="Enter your first name" required>
+
+        <label for="student-surname">Surname:</label>
+        <input type="text" id="student-surname" name="surname" placeholder="Enter your surname" required>
+
+        <label for="student-email">Email ID:</label>
+        <input type="email" id="student-email" name="email" placeholder="Enter your email address" required>
+
+        <label for="student-username">Create Username:</label>
+        <input type="text" id="student-username" name="username" placeholder="Choose a username" required>
+
+        <label for="student-password">Create Password:</label>
+        <input type="password" id="student-password" name="password" placeholder="Enter your password" required>
+
+        <label for="student-usn">USN:</label>
+        <input type="text" id="student-usn" name="usn" placeholder="Enter your USN" required>
+
+        <button type="submit">Register as Student</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle between tabs
+    function showTab(tabName) {
+      document.getElementById('alumni').style.display = tabName === 'alumni' ? 'block' : 'none';
+      document.getElementById('student').style.display = tabName === 'student' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

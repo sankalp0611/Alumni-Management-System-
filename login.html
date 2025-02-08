@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Alumni Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login - Alumni Management System</h1>
+    
+    <!-- Login Form -->
+    <div class="tab-content">
+      <h2>Login</h2>
+      <form id="loginForm" method="POST" action="process_login.php">
+        <label for="login-role">Select Role:</label>
+        <select id="login-role" name="role" required>
+          <option value="">--Select--</option>
+          <option value="alumni">Alumni</option>
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="username" placeholder="Enter your username" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Link to Registration -->
+      <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for client-side validation
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      const role = document.getElementById("login-role").value;
+      if (!role) {
+        alert("Please select a role.");
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
